@@ -24,6 +24,21 @@ class Ui_MainWindow(QMainWindow):
         self.departure_city_lineEdit = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.departure_city_lineEdit.setGeometry(QtCore.QRect(130, 10, 141, 41))
         self.departure_city_lineEdit.setObjectName("departure_city_lineEdit")
+        self.departure_city_lineEdit.setStyleSheet("""
+            QLineEdit {
+                font: 12pt 'Arial';  /* Fontul textului */
+                border: 2px solid #7A7A7A;  /* Bordura gri în jurul câmpului */
+                border-radius: 5px;  /* Colțuri ușor rotunjite */
+                padding: 5px;  /* Spațiu între text și marginea câmpului */
+                background-color: #f0f0f0;  /* Culoare de fundal deschisă */
+                color: #333333;  /* Culoare text întunecată */
+            }
+
+            QLineEdit:focus {
+                border: 2px solid #4CAF50;  /* Culoare de bordură verde la focus */
+                background-color: #ffffff;  /* Culoare de fundal albă la focus */
+            }
+        """)
         self.destination_label = QtWidgets.QLabel(parent=self.centralwidget)
         self.destination_label.setGeometry(QtCore.QRect(400, 10, 121, 41))
         self.destination_label.setStyleSheet("font: 14pt \"MS Shell Dlg 2\";")
@@ -33,8 +48,24 @@ class Ui_MainWindow(QMainWindow):
         self.destination_city_lineEdit.setObjectName("destination_city_lineEdit")
         self.with_return_radioButton = QtWidgets.QRadioButton(parent=self.centralwidget)
         self.with_return_radioButton.setGeometry(QtCore.QRect(20, 70, 121, 41))
-        self.with_return_radioButton.setStyleSheet("font: 10pt \"MS Shell Dlg 2\";\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.with_return_radioButton.setStyleSheet("""
+            QRadioButton {
+                font: 10pt "MS Shell Dlg 2";
+                background-color: #e0e0e0;
+                border-radius: 5px;
+                padding: 10px;
+                color: #333;
+            }
+            QRadioButton::indicator {
+                width: 20px;
+                height: 20px;
+                border-radius: 10px;
+                background-color: #ff6347;  /* Roșu de exemplu */
+            }
+            QRadioButton::indicator:checked {
+                background-color: #32cd32;  /* Verde când este selectat */
+            }
+        """)
         self.with_return_radioButton.setObjectName("with_return_radioButton")
         self.currency_comboBox = QtWidgets.QComboBox(parent=self.centralwidget)
         self.currency_comboBox.setGeometry(QtCore.QRect(160, 70, 71, 31))
@@ -59,6 +90,19 @@ class Ui_MainWindow(QMainWindow):
         self.number_of_persons_lineEdit = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.number_of_persons_lineEdit.setGeometry(QtCore.QRect(170, 200, 151, 41))
         self.number_of_persons_lineEdit.setObjectName("number_of_persons_lineEdit")
+        self.number_of_persons_lineEdit.setStyleSheet("""
+            QLineEdit {
+                background-color: #f0f0f0; 
+                border: 2px solid #888888;
+                border-radius: 5px;
+                padding: 5px;
+                font: 14pt "Arial";
+                color: #333;
+            }
+            QLineEdit:focus {
+                border-color: #32cd32;  /* Verde când câmpul este selectat */
+            }
+        """)
         self.consumption_label = QtWidgets.QLabel(parent=self.centralwidget)
         self.consumption_label.setGeometry(QtCore.QRect(20, 270, 121, 41))
         self.consumption_label.setStyleSheet("font: 14pt \"MS Shell Dlg 2\";")
@@ -66,9 +110,39 @@ class Ui_MainWindow(QMainWindow):
         self.consumption_lineEdit = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.consumption_lineEdit.setGeometry(QtCore.QRect(170, 270, 151, 41))
         self.consumption_lineEdit.setObjectName("consumption_lineEdit")
+        self.consumption_lineEdit.setStyleSheet("""
+            QLineEdit {
+                background-color: #f0f0f0; 
+                border: 2px solid #888888;
+                border-radius: 5px;
+                padding: 5px;
+                font: 14pt "Arial";
+                color: #333;
+            }
+            QLineEdit:focus {
+                border-color: #ff6347;  /* Roșu când câmpul este selectat */
+            }
+        """)
         self.calculate_btn = QtWidgets.QPushButton(parent=self.centralwidget)
         self.calculate_btn.setGeometry(QtCore.QRect(510, 240, 171, 71))
-        self.calculate_btn.setStyleSheet("font: 14pt \"MS Shell Dlg 2\";")
+        self.calculate_btn.setStyleSheet("""
+            QPushButton {
+                font: 14pt 'MS Shell Dlg 2'; 
+                background-color: #4CAF50;  /* Culoare verde pentru fundal */
+                color: white;  /* Culoare albă pentru text */
+                border-radius: 10px;  /* Colțuri rotunjite */
+                padding: 10px;  /* Margini interne */
+                border: none;  /* Fără bordură */
+            }
+
+            QPushButton:hover {
+                background-color: #45a049;  /* Culoare mai închisă la hover */
+            }
+
+            QPushButton:pressed {
+                background-color: #388e3c;  /* Culoare și mai închisă la apăsare */
+            }
+        """)
         self.calculate_btn.setObjectName("calculate_btn")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
