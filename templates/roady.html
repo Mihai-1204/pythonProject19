@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Roady - Price Calculator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/roady.css') }}">
+</head>
+
+    <body>
+        <div class="container">
+            <h1>Price Calculation</h1>
+            <form id="priceForm">
+                <label for="departure_city">Departure City:</label>
+                <input type="text" id="departure_city" name="departure_city" required>
+
+                <label for="destination_city">Destination City:</label>
+                <input type="text" id="destination_city" name="destination_city" required>
+
+                <label for="number_of_persons">Number of Persons:</label>
+                <input type="number" id="number_of_persons" name="number_of_persons" required>
+
+                <label for="consumption">Average Consumption (liters/100km):</label>
+                <input type="number" id="consumption" name="consumption" required>
+
+                <label for="fuel_type">Fuel Type:</label>
+                <select id="fuel_type" name="fuel_type">
+                    <option value="Gas">Gas</option>
+                    <option value="Diesel">Diesel</option>
+                </select>
+
+                <label for="with_return">With Return:</label>
+                <input type="checkbox" id="with_return" name="with_return">
+
+                <button type="submit">Calculate Price</button>
+            </form>
+
+            <div id="result">
+                <h2>Result:</h2>
+                <p id="price">Waiting for result...</p>
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='js/roady.js') }}"></script>
+    </body>
+
+</html>
